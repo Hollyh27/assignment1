@@ -1,0 +1,107 @@
+
+
+body {
+       font-family: Arial, sans-serif;
+    background-color: black;
+    color: yellow;
+    text-align: center;
+}
+
+header {
+    background-color: #111;
+    padding: 15px;
+}
+
+h1 {
+   color:white;
+    font-size: 2em;
+}
+
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+     display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: yellow;
+    
+}
+
+nav ul li a:hover {
+    color: white;
+    text-shadow: 0 0 10px yellow;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: 70px;
+    gap: 40px;
+}
+
+
+.about {
+   
+    text-align: left;
+}
+
+.about p {
+    font-size: 14px;
+}
+
+.me-content img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+  
+}
+
+.profile {
+    width: 45%;
+    background-color: #111;
+    border: 2px solid yellow;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+
+button {
+    background-color: #111;
+    color: yellow;
+    border: 2px solid yellow;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    
+   
+}
+
+button:hover {
+    background-color: yellow;
+    color: #111;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 5);
+   
+}
+
+
+footer {
+    background-color: #111;
+    padding: 10px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
