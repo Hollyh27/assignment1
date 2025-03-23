@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <header>
+        <h1>About</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Char1.html">Characters</a></li>
+                <li><a href="Planets.html">Planets</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class ="container">
+    
+    <section class="me">
+            
+        <div class="me-content">
+          
+            <div class="text">
+                <h2>About me!</h2>
+                <p>I first watched Star Wars when my friend recommended it to me around 6 years ago, and they are still some of my favourite movies ever! I have watched all the movies, series, read the books and played the games. I just cannot get enough!</p>
+                 <img src="images/tatooine.jpg" height=200 width=auto>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class ="profile">
+<h1>Enter personal Profile</h1>
+<p id = "length"> </p>
+<p id = "firstChar"> </p>
+<p id = "input"></p>
+<button>Enter personal Profile</button>
+    </div>
+    </div>
+    <script>
+     
+
+
+const btn = document.querySelector('button');
+  
+        
+	btn.addEventListener('click', (evt) => {
+     let you = prompt("Enter your name", "");
+         let email = prompt("Enter email address", "");
+        let bYear = prompt("Enter the year you were born", "");
+      document.querySelector('#length').textContent = `The length of the your name (${you}) is ${you.length}`; 
+    
+   
+    document.querySelector('#firstChar').textContent =`The first character of your name (${you}) is ${you.charAt(0)}`;
+
+       document.querySelector('#input').textContent = `The email you entered was ${email}`; 
+        
+         let currentYear = new Date().getFullYear();
+    let age = Math.abs(currentYear - bYear);
+    alert(`You are approximately ${age} years old.`);
+      
+        
+  });
+        
+        
+  
+    </script>
+    
+    <footer>
+        <p>May the Force be with you</p>
+    </footer>
+
+</body>
+</html>

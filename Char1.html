@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Characters</title>
+  <link rel="stylesheet" href="char.css">
+  <link rel="stylesheet" href="css/char.css">
+</head>
+
+<body>
+<div id  = "container">
+    
+    <section class="char">
+  <h1>Characters</h1>
+    <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Char1.html">Characters</a></li>
+                <li><a href="Planets.html">Planets</a></li>
+                  <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+    </section>
+  <form>
+  <div class = "form-row">
+   <label for = "options">Select a Character</label>
+   <select name = "name" id = "name">
+   <option value = "">Options</option>
+   <option value = "Luke Skywalker">Luke Skywalker</option>
+   <option value = "Leia Organa">Leia Organa</option>
+   <option value = "Obi-Wan Kenobi">Obi-Wan Kenobi</option>
+    <option value = "Darth Vader">Darth Vader</option>
+     <option value = "Yoda">Yoda</option>
+   </select>
+   </div>
+  </form>
+  <div class="cards"></div>
+   
+</div>
+    
+  <script>
+
+      
+      
+    const friends = [
+      {
+        "name": "Luke",
+        "fullname": "Luke Skywalker",
+        "image": "images/Luke.jpg",
+        "master": "Obi-Wan Kenobi & Yoda",
+        "status": "Jedi Master",
+        "origin": "Alderaan"
+      },
+      {
+        "name": "Leia",
+        "fullname": "Leia Organa",
+        "image": "images/Leia.jpg",
+        "master": "None",
+        "status": "Princess",
+        "origin": "Tatooine"
+      },
+      {
+        "name": "Obi-Wan",
+        "fullname": "Obi-Wan Kenobi",
+        "image": "images/Kenobi.jpg",
+        "master": "Qui-Gon Jinn",
+        "status": "Master",
+        "origin": "Stewjon"
+      },
+      {
+        "name": "Vader",
+        "fullname": "Darth Vader",
+        "image": "images/Vader.jpg",
+        "master": "Darth Sidious",
+        "status": "Sith Lord",
+        "origin": "Tatooine"
+      },
+      {
+       "name": "Yoda",
+        "fullname": "Yoda",
+        "image": "images/Yoda.jpg",
+        "master": "N'Kata Del Gormo",
+        "status": "Master",
+        "origin": "Dagobah"
+      }
+    ]
+	
+    
+ document.addEventListener("DOMContentLoaded", function () {
+  const nameSelect = document.getElementById("name");
+     const cardsContainer = document.querySelector(".cards");
+
+  nameSelect.addEventListener("change", function () {
+    const selectedname = nameSelect.value; 
+    cardsContainer.innerHTML = ""; 
+
+    const filteredFriends = friends.filter(friend => friend.fullname === nameSelect.value);
+
+      if (filteredFriends.length === 0) {
+      cardsContainer.innerHTML = "<p>No Character selected.</p>";
+    } else {
+      filteredFriends.forEach(friend => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        card.innerHTML = `
+          <img src="${friend.image}" alt="${friend.name}" class="friend-img">
+          <h2>${friend.fullname}</h2>
+          <p><strong>Status:</strong> ${friend.status}</p>
+          <p><strong>Origin:</strong> ${friend.origin}</p>
+          <p><strong>Master:</strong> ${friend.master}</p>
+    
+        `;
+
+        cardsContainer.appendChild(card);
+      });
+    }
+  });
+});
+
+	
+  </script>
+     
+   
+
+</body>
+
+</html>

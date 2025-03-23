@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets</title>
+    <link rel="stylesheet" href="Planets.css">
+</head>
+<body>
+
+    <header>
+        <h1>Add a Planet from Star Wars!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Char1.html">Characters</a></li>
+                <li><a href="Planets.html">Planets</a></li>
+                 <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class ="contain">
+    <img src="images/Coruscant.jpg" height=100 width =100 alt="Star Wars Planet" class="planet-image">
+    <form id="planetForm">
+        <div>
+            <label for="Pname">Planet name</label>
+            <input type="text" id="Pname" name="Pname" placeholder="Naboo, Tatooine, Alderaan..." required>
+        </div>
+        <br>
+        <div>
+            <label for="Pterrain">Planet terrain</label>
+            <input type="text" id="Pterrain" name="Pterrain" placeholder="Forest, Desert, Ocean..." required>
+        </div>
+        <br>
+        <div>
+            <label for="Pinhabitants">Planet inhabitants</label>
+            <input type="text" id="Pinhabitants" name="Pinhabitants" placeholder="Humans, Hutts, Ewoks..." required>
+        </div>
+        <br>
+        <div>
+            <label for="Moment">Key Moment</label>
+            <input type="text" id="Moment" name="Moment" required>
+        </div>
+        <br>
+        <div>
+            <input type="reset" value="Reset">
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+        
+    </form>
+
+    <h2>Planet Records</h2>
+    <table id="planetTable">
+        <thead>
+            <tr>
+                <th>Planet Name</th>
+                <th>Planet Terrain</th>
+                <th>Planet Inhabitants</th>
+                <th>Planet Key Moments</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    let planets = [];
+
+       const form = document.querySelector('form');
+           const tableBody = document.querySelector('#planetTable tbody');
+ 
+    form.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+
+        const newplanet = {
+            Pname: form.elements.Pname.value,
+            Pterrain: form.elements.Pterrain.value,
+            Pinhabitants: form.elements.Pinhabitants.value,
+            Moment: form.elements.Moment.value,
+        };
+
+  planets.push(newplanet);
+ displayRecs();
+form.reset();
+ form.elements.Pname.focus();
+    });
+
+       
+       
+       
+       
+    const displayRecs = () => {
+        tableBody.textContent = ""; 
+
+        planets.forEach((planet, index) => {
+            tableBody.insertAdjacentHTML(
+                "beforeend",
+                `<tr>
+                    <td>${planet.Pname}</td>
+                    <td>${planet.Pterrain}</td>
+                    <td>${planet.Pinhabitants}</td>
+                    <td>${planet.Moment}</td>
+                    <td><button class="delete-btn" data-id="${index}">Remove</button></td>
+                </tr>`
+            );
+        });
+
+        
+        
+        
+        
+      
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-id');
+                deletePlanet(index);
+            });
+        });
+    };
+
+    const deletePlanet = (index) => {
+        planets.splice(index, 1); 
+        displayRecs(); 
+    };
+
+
+    
+ });
+    </script>
+ 
+</body>
+</html>
