@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: yellow;
+    text-align: center;
+}
+
+header {
+    background-color: #111;
+    padding: 15px;
+}
+
+h1 {
+    color:white;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: yellow;
+    
+}
+nav ul li a:hover {
+    color: white;
+    text-shadow: 0 0 10px yellow;
+}
+
+.intro {
+    color: white;
+    padding: 50px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.about {
+    padding: 30px;
+}
+
+footer {
+    background-color: #111;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+
+
+
+.container{
+    display: flex;
+}
+
+
+
+
+.intro-content, .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+
+.intro-content img, .about-content img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+  
+}
+
+.text {
+    width: 50%;
+    text-align: left;
+}
+
+.intro-content {
+    flex-direction: row-reverse; 
+}
+
+
+
+footer {
+    background-color: #111;
+    padding: 10px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

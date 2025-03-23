@@ -1,0 +1,132 @@
+header {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	width:80%;
+	margin:.5em auto;
+	padding:1em;
+}
+
+h1 {
+	text-align:center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    
+}
+
+nav ul li a:hover {
+    color: white;
+    text-shadow: 0 0 10px yellow;
+}
+.card {
+  flex: 0 0 250px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.card img {
+  max-width: 100%;
+  margin: 0;
+}
+
+.card .text {
+  padding: 0 10px 10px;
+}
+
+.card p:nth-of-type(1) {
+  
+  
+}
+
+.card p:nth-of-type(2) {
+  color: yellow;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+form {
+  border: solid #111;
+  padding: 1em;
+  width:50%;
+  margin: 1em auto;
+       box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+  
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-row>label {
+  flex: 0 1 30%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+form input {
+  flex: 2;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+
+form button {
+  padding: 1em;
+  background: #00ABE4;
+  color: white;
+  border: 0;
+  margin-top: 1e
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: yellow;
+    text-align: center;
+
+}
+
+header {
+    background-color: #111;
+    padding: 15px;
+}
+h1 {
+    font-size: 2em;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: yellow;
+    
+}
+.char {
+    background-color: #111;
+    padding: 10px;
+   
+}
+
